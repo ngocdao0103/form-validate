@@ -18,54 +18,76 @@
                 <div class="panel-heading">
                     <h2 class="panel-title">THÊM MỚI NGƯỜI DÙNG</h2>
                 </div>
-                <form class="panel-body" id="frm">
+                <form id="frm" class="panel-body" name="frm">
                     <div class="form-group">
                         <label>HỌ TÊN</label>
-                        <input class="form-control"/>
+                        <input id="username" class="form-control" />
+                        <span class="input-required text-danger" id="username-required">Họ tên không được bỏ
+                            trống</span>
                     </div>
                     <div class="form-group">
                         <label>GIỚI TÍNH</label>
-                        <div class="radio">
-                            <label><input type="radio" />NAM</label>
-                            <label><input type="radio"/>NỮ</label>
+                        <div class="radio" id="gender">
+                            <label><input type="radio" name="gender" value="nam" />NAM</label>
+                            <label><input type="radio" name="gender" value="nu" />NỮ</label>
+                            <span class="input-required text-danger" id="gender-required">Giới tính không được bỏ
+                                trống</span>
                         </div>
                     </div>
 
                     <div class="form-group">
                         <label>QUỐC TỊCH</label>
-                        <select class="form-control" name="quoctich">
+                        <select class="form-control" id="nationality">
                             <option value="">Vui lòng chọn quốc tịch</option>
-                            <option value="">VIỆT NAM</option>
-                            <option value="">MỸ</option>
+                            <option value="vietnam">VIỆT NAM</option>
+                            <option value="my">MỸ</option>
                         </select>
+                        <span class="input-required text-danger" id="nationality-required">Quốc tịch không được bỏ
+                            trống</span>
                     </div>
                     <div class="form-group">
                         <label>CMND/CCCD</label>
-                        <input class="form-control" />
+                        <input class="form-control" id="cmnd_cccd" />
+                        <span class="input-required text-danger" id="cmnd_cccd-required">Quốc tịch không được bỏ
+                            trống</span>
                     </div>
                     <div class="form-group">
                         <label>SỐ ĐIỆN THOẠI</label>
-                        <input class="form-control" />
+                        <input class="form-control" id="phone" oninput="isPhone()" />
+                        <span class="input-required text-danger" id="phone-required">Số điện thoại không được bỏ
+                            trống</span>
+                        <span class="input-required text-danger" id="phone-pattern">Số điện thoại không đúng định
+                            dạng</span>
                     </div>
                     <div class="form-group">
                         <label>EMAIL</label>
-                        <input class="form-control" />
+                        <input class="form-control" id="email" oninput="isEmail()" />
+                        <span class="input-required text-danger" id="email-required">Email không được bỏ
+                            trống</span>
+                        <span class="input-required text-danger" id="email-pattern">Email không đúng định
+                            dạng</span>
                     </div>
                     <div class="form-group">
                         <label>HÌNH ẢNH</label>
-                        <input type="file" class="form-control" />
+                        <input type="file" class="form-control" id="avatar" />
+                        <span class="input-required text-danger" id="avatar-required">Avatar không được bỏ
+                            trống</span>
                     </div>
                     <div class="form-group">
                         <label>GHI CHÚ</label>
-                        <textarea rows="5" class="form-control"></textarea>
+                        <textarea rows="5" class="form-control" id="note" minlength="10" onchange="isMinLenght()"></textarea>
+                        <span class="input-required text-danger" id="note-required">Ghi chú không được bỏ
+                            trống</span>
+                        <span class="input-required text-danger" id="note-minlenght">Ghi chú phải lớn hơn 10 kí tự</span>
                     </div>
                     <div class="form-group">
-                        <button type="button" class="btn btn-primary">LƯU</button>
+                        <button type="button" class="btn btn-primary" onclick="save()">LƯU</button>
                     </div>
                 </form>
             </div>
         </article>
     </div>
+    <script src="js/app.js" type="text/javascript"></script>
 </body>
 
 </html>
