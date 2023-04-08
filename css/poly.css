@@ -1,0 +1,54 @@
+body {
+    padding: 0px;
+    margin: 0 auto;
+    
+}
+
+.container>div>* {
+    min-height: 300px;
+   
+}
+
+.container>div>article {
+    background-color: rgb(255, 255, 255);
+}
+
+.panel-footer {
+    display: flex;
+    justify-content: space-between;
+}
+
+.poly-prod {
+    height: 150px;
+    max-width: 100%;
+}
+
+p {
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    padding: 0;
+    margin: 10px;
+    text-align: justify;
+    line-height: 22px;
+}
+
+.container {
+    margin-top: 50px;
+    display: flex;
+    justify-content: center;
+}
+
+.input_border_required {
+    border: 1px solid #a94442;
+}
+
+.input-required {
+    display: none;
+}
+
+.phone-required {
+    display: none;
+}
+
